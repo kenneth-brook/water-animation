@@ -14,5 +14,17 @@
 
 <body>
   <script src="js/scripts.js"></script>
+  <div class="background">
+    <div class="water"></div>
+  </div>
+
+  <svg>
+    <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+      <feTurbulence id="sea-filter" numOctaves="1" seed="2" baseFrequency="0.01 0.02"></feTurbulence>
+      <feDisplacementMap scale="10" in="SourceGraphic"></feDisplacementMap>
+      <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="180s" 
+      keyTimes="0;0.5;1" values="0.01 0.03;0.03 0.05;0.01 0.03" repeatCount="indefinite"/>
+    </filter>
+  </svg>
 </body>
 </html>
